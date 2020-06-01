@@ -1,0 +1,15 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: gmail-user
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/gmail_study?characterEncoding=UTF-8
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+mapper:
+  identity: MYSQL
