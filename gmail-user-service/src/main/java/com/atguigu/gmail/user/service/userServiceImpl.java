@@ -1,22 +1,24 @@
-package com.atguigu.gmail.user.service.Impl;
+package com.atguigu.gmail.user.service;
 
-import com.atguigu.gmail.user.bean.UmsMember;
-import com.atguigu.gmail.user.bean.UmsMemberReceiveAddress;
-import com.atguigu.gmail.user.mapper.UserAddressMapper;
+import com.alibaba.dubbo.config.annotation.Service;
+import com.atguigu.gmail.bean.UmsMember;
+import com.atguigu.gmail.bean.UmsMemberReceiveAddress;
+import com.atguigu.gmail.service.userService;
+import com.atguigu.gmail.user.mapper.UmsMemberReceiveAddressMapper;
 import com.atguigu.gmail.user.mapper.UserMapper;
-import com.atguigu.gmail.user.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
+
 @Service
 public class userServiceImpl implements userService {
     @Autowired
     private UserMapper userMapper;
 
     @Autowired
-    private UserAddressMapper userAddressMapper;
+    private UmsMemberReceiveAddressMapper userAddressMapper;
     @Override
     public List<UmsMember> findAll() {
         return userMapper.selectAllUser();
@@ -24,7 +26,7 @@ public class userServiceImpl implements userService {
 
     @Override
     public List<UmsMemberReceiveAddress> findAllAddress() {
-        return userAddressMapper.selectAllAddress();
+        return userMapper.selectAllAddress();
     }
 
     @Override
