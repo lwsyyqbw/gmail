@@ -1,4 +1,5 @@
-package com.atguigu.gmail.user.bean;
+package com.atguigu.gmail.bean;
+
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

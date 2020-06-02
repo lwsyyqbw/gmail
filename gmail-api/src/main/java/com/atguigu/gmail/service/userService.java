@@ -1,7 +1,9 @@
-package com.atguigu.gmail.user.service;
+package com.atguigu.gmail.service;
 
-import com.atguigu.gmail.user.bean.UmsMember;
-import com.atguigu.gmail.user.bean.UmsMemberReceiveAddress;
+
+
+import com.atguigu.gmail.bean.UmsMember;
+import com.atguigu.gmail.bean.UmsMemberReceiveAddress;
 
 import java.util.List;
 
