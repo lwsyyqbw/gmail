@@ -1,0 +1,26 @@
+server:
+  port: 8102
+spring:
+  application:
+    name: gmail-user-web
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/gmail_study?characterEncoding=UTF-8
+  dubbo: #dubbo配置
+    application: user-web #服务名称
+    protocol:
+      name: dubbo #通讯协议
+    registry:
+      address: 192.168.178.129:2181 #zookeeper注册地址
+      protocol: zookeeper #zookeeper通讯协议名称
+    base-package: com.atguigu.gmail #dubbo的服务扫描的路径
+    consumer:
+      timeout: 600000 #consumer的超时时间
+      check: false #consumer启动时检查提供者是否存在 false 表示忽略
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+mapper:
+  identity: MYSQL
